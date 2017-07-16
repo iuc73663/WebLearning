@@ -43,34 +43,10 @@
         panel 4<br>
       </div>
 
-
-
-
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="myScript.js"></script>
 
-    <script>
-      $(function(){
-        $('.tab-panels .tabs li').on('click', function() {
-          $('.tab-panels .tabs li.active').removeClass('active');
-          $(this).addClass('active');
-          var pannelToShow = $(this).attr('rel');
-          //alert(pannelToShow);
-
-          $('.tab-panels .panel.active').slideUp(300, showNextPanel);
-
-          function showNextPanel() {
-            $(this).removeClass('active');
-            $('#' + pannelToShow).slideDown(300, function() {
-              $(this).addClass('active');
-            });
-          }
-
-        });
-
-      });
-
-    </script>
 
   </body>
 </html>
