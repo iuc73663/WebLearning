@@ -1,0 +1,76 @@
+<!Doctype html>
+
+<html>
+  <head>
+    <title>Tab Widget Example</title>
+    <link rel="stylesheet" href="styleSheet.css" />
+  </head>
+  <body>
+
+    <div class="tab-panels">
+      <ul class="tabs">
+        <li rel= "panel1" class="active">panel1</li>
+        <li rel= "panel2">panel2</li>
+        <li rel= "panel3">panel3</li>
+        <li rel= "panel4">panel4</li>
+      </ul>
+
+      <div id="panel1" class="panel active">
+        this   <br>
+        is     <br>
+        my     <br>
+        panel 1<br>
+      </div>
+
+      <div id="panel2" class="panel">
+        this   <br>
+        is     <br>
+        my     <br>
+        panel 2<br>
+      </div>
+
+      <div id="panel3" class="panel">
+        this   <br>
+        is     <br>
+        my     <br>
+        panel 3<br>
+      </div>
+
+      <div id="panel4" class="panel">
+        this   <br>
+        is     <br>
+        my     <br>
+        panel 4<br>
+      </div>
+
+
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+      $(function(){
+        $('.tab-panels .tabs li').on('click', function() {
+          $('.tab-panels .tabs li.active').removeClass('active');
+          $(this).addClass('active');
+          var pannelToShow = $(this).attr('rel');
+          //alert(pannelToShow);
+
+          $('.tab-panels .panel.active').slideUp(300, showNextPanel);
+
+          function showNextPanel() {
+            $(this).removeClass('active');
+            $('#' + pannelToShow).slideDown(300, function() {
+              $(this).addClass('active');
+            });
+          }
+
+        });
+
+      });
+
+    </script>
+
+  </body>
+</html>
