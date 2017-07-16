@@ -2,8 +2,9 @@ $(function(){
 
   $('.tab-panels .tabs li').on('click', function() {
 
+    var $panel = $(this).closest('.tab-panels');
     //removes any li tab that has active class
-    $('.tab-panels .tabs li.active').removeClass('active');
+    $panel.find('.tabs li.active').removeClass('active');
 
     //add active to click on tab
     $(this).addClass('active');
@@ -12,7 +13,7 @@ $(function(){
     var pannelToShow = $(this).attr('rel');
 
     //find active panel
-    $('.tab-panels .panel.active').slideUp(300, showNextPanel);
+    $panel.find('.panel.active').slideUp(300, showNextPanel);
 
     //show next panel
     function showNextPanel() {
