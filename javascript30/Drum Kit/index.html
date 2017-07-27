@@ -68,7 +68,7 @@
     <script>
 
 
-      function playSound(e){
+      function playSound(e){ //for pressing physical keys
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
         const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
         if(!audio) return;
@@ -83,16 +83,18 @@
         this.classList.remove('playing');
       }
 
-      const keys = document.querySelectorAll('.key');
-      keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-
-      keys.forEach(key => key.addEventListener('click', function(){
+      function keyPress(){ //for pressing broswer keys
         const audio = document.querySelector("audio[data-key='" + this.getAttribute("data-key") + "']");
         audio.currentTime = 0;
         audio.play();
         this.classList.add('playing');
         //console.log(this.getAttribute("data-key"));
-      }));
+      }
+
+      const keys = document.querySelectorAll('.key');
+      keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+      keys.forEach(key => key.addEventListener('click', keyPress));
 
       window.addEventListener('keydown', playSound);
     </script>
