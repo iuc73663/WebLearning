@@ -1,81 +1,34 @@
-body {
-  background-color: #EEE;
-  font-family: Helvetica, Arial, sans-serif;
-  margin: auto;
-}
-
-#container {
-  background-color: white;
-  width:1000px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-}
-
-#header {
-  background-color: #66CCFF;
-  color:white;
-  text-align: center;
-  height: 100px;
-}
-
-#content {
-  padding-top:25px;
-}
-
-h1, h2, h3 {
+* {
+  padding: 0;
   margin: 0;
 }
 
-#nav{
-  width: 25%;
-  height: 100%;
-  float:left;
-  background-color: #66CCFF;
-  color: white;
-  text-align: center;
-  margin:0;
-}
 
-#main {
-  width: 600px;
-  float:right;
-  text-align: center;
-}
-
-#footer {
-  clear:both;
-  padding: 10px;
-  background-color: #999999;
-  color: white;
-  text-align: right;
-}
-
-#nav ul{
-  list-style-type: none;
-  padding:15px;
-}
-
-#nav ul li {
-  padding:5px;
-}
-
-a:link    {
-  /* Applies to all unvisited links */
-  text-decoration:  none;
-  color:            white;
-}
-
-a:visited {
-  /* Applies to all visited links */
-  text-decoration:  none;
-  color:            white;
-}
-
-a:hover   {
-  /* Applies to links under the pointer */
-  //text-decoration:  underline;
-  font-weight:      bold;
+body {
   background-color: black;
-  color:            white;
+}
+
+td {
+  width : 20px;
+  height: 20px;
+}
+
+.blank {
+  background-color: blank;
+}
+
+.snake {
+  background-color: white;
+}
+
+.wall{
+  background-color: green;
+}
+
+.fruit{
+  background-color: red;
+}
+
+h1{
+  color:white;
 }
