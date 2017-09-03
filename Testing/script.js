@@ -26,8 +26,27 @@ var direction = -1; //up    = 0
 
 var int;
 var score = 0;
+var topScore = 0;
 
 function run(){
+  //reset all variables
+  snakeX = 2;
+  snakeY = 2;
+  height = 30;
+  width = 30;
+  interval = 100;
+  increment = 1;
+
+  length = 0;
+  tailX = [snakeX];
+  tailY = [snakeY];
+
+  running = false;
+  gameOver = false;
+
+  direction = -1;
+  score = 0;
+
   init();
   int = setInterval(gameLoop, interval);
 }
@@ -41,6 +60,7 @@ function init(){
 
 /* GENERATE MAP FOR SNAKE
 */
+/*
 function createMap() {
   document.write("<table>");
   for(var y = 0; y  < height; y++){
@@ -56,6 +76,32 @@ function createMap() {
     document.write("</tr>");
   }
   document.write("</table>");
+}
+*/
+function createMap() {
+  var theTable = document.createElement("table");
+
+  for(var y = 0; y  < height; y++){
+    var tableRow = document.createElement("tr");
+    theTable.appendChild(tableRow);
+    for(var x = 0; x < width; x++){
+      if(x == 0 || x == width - 1 || y == 0 || y == height - 1){
+        var wallBlock = document.createElement('td');
+        wallBlock.className = "wall";
+        wallBlock.setAttribute("id", x + "-" + y);
+        tableRow.appendChild(wallBlock);
+
+      }
+      else {
+        var blankBlock = document.createElement('td');
+        blankBlock.className = "blank";
+        blankBlock.setAttribute("id", x + "-" + y);
+        tableRow.appendChild(blankBlock);
+      }
+    }
+  }
+
+  document.getElementById("board").appendChild(theTable);
 }
 
 function createSnake() {
@@ -121,6 +167,7 @@ function gameLoop(){
   }
   else if(gameOver){
     clearInterval(int);
+
   }
 
 }
@@ -151,13 +198,19 @@ function update(){
     createFruit();
     length+=increment;
     score += 4;
+    if(score >= topScore)
+      topScore = score;
   }
 
   if(gameOver){
     document.getElementById("score").innerHTML = "Game Over";
   }
-  else
+  else{
     document.getElementById("score").innerHTML = "Score : " + score;
+    if(score >= topScore){
+      document.getElementById("highScore").innerHTML = "High Score : " + topScore;
+    }
+  }
 
 }
 
@@ -168,6 +221,13 @@ function updateTail(){
   }
   tailX[0] = snakeX;
   tailY[0] = snakeY;
+}
+
+function gameReset(){
+  clearInterval(int);
+  document.getElementsByTagName("table")[0].remove();
+  run();
+  document.getElementById("score").innerHTML = "Score : 0";
 }
 
 
