@@ -4,25 +4,59 @@
 }
 
 
-body {
+#gameBoard {
   background-color: black;
+  margin: 0 auto;
 }
 
-td {
-  width : 20px;
-  height: 20px;
+#theBody {
+  background-color: black;
+  color: white;
+}
+
+#resetButton{
+  margin: 15px;
+  padding:15px;
+  background-color: green;
+  color:black;
+  width:25%;
+  height:25%;
+  font-size: 25px;
+}
+
+#mainContainer{
+  width:100%;
+}
+
+
+td div
+{
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top:0;
+}
+td
+{
+    height:50px;
+    width:50px;
+    overflow:visible;
+    position:relative;
 }
 
 .blank {
   background-color: blank;
+  border: .5px solid green;
 }
 
 .snake {
   background-color: white;
+  border: 1px solid black;
 }
 
 .wall{
   background-color: green;
+  border: 1px solid white;
 }
 
 .fruit{

@@ -40,11 +40,11 @@ function run(){
   length = 0;
   tailX = [snakeX];
   tailY = [snakeY];
-
+  direction = -1;
   running = false;
   gameOver = false;
 
-  direction = -1;
+
   score = 0;
 
   init();
@@ -80,23 +80,28 @@ function createMap() {
 */
 function createMap() {
   var theTable = document.createElement("table");
+  theTable.setAttribute("id", "gameBoard");
+
+
+  var tableRow = null;
+  var boardBlock = null;
 
   for(var y = 0; y  < height; y++){
-    var tableRow = document.createElement("tr");
+    tableRow = document.createElement("tr");
     theTable.appendChild(tableRow);
     for(var x = 0; x < width; x++){
       if(x == 0 || x == width - 1 || y == 0 || y == height - 1){
-        var wallBlock = document.createElement('td');
-        wallBlock.className = "wall";
-        wallBlock.setAttribute("id", x + "-" + y);
-        tableRow.appendChild(wallBlock);
+        boardBlock = document.createElement('td');
+        boardBlock.className = "wall";
+        boardBlock.setAttribute("id", x + "-" + y);
+        tableRow.appendChild(boardBlock);
 
       }
       else {
-        var blankBlock = document.createElement('td');
-        blankBlock.className = "blank";
-        blankBlock.setAttribute("id", x + "-" + y);
-        tableRow.appendChild(blankBlock);
+        boardBlock = document.createElement('td');
+        boardBlock.className = "blank";
+        boardBlock.setAttribute("id", x + "-" + y);
+        tableRow.appendChild(boardBlock);
       }
     }
   }
@@ -153,6 +158,10 @@ window.addEventListener("keypress", function key(){
   else if(direction != 1 && (key == 100 || key == 68))
       direction = 2;
 
+
+  if(key == 114){
+    gameReset();
+  }
   if(!running)
     running = true;
   else if(key == 32)
@@ -173,6 +182,7 @@ function gameLoop(){
 }
 
 function update(){
+  console.log(direction);
   set(fX, fY, "fruit");
   updateTail();
   set(tailX[length], tailY[length], "blank");
