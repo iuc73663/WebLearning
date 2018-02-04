@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Get Key Code</title>
+
+  </head>
+  <body>
+    <div class="keys">
+
+
+
+
+    <script>
+
+
+      function displayKey(e){
+        const key  = e.keyCode;
+        console.log(e.key + " " + e.keyCode);
+      }
+
+      window.addEventListener('keydown', displayKey);
+    </script>
+  </body>
+</html>
