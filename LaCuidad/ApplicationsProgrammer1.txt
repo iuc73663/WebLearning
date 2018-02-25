@@ -103,3 +103,19 @@ DIFFERENCE BETWEEN HASH TABLE AND HASH MAP
 	Hash Table does not allow null values/keys; Hash Maps allow for 1 null key and null values 
 	
 Java Hash Map null key will always have index 0	
+
+
+Sets have a very useful contains method to check if an element is within a set 
+Sets do not hold duplicate items, which is why they differ from maps 
+
+
+***SETS example 
+	say you have 2 sets with non duplicate items in each 
+	set1 = {1,2,3,4,5,6}
+	set2 = {0,1,2,3,4,5,6,7)
+	
+	To check the intersection of two sets: 
+	
+	set1.retainAll(set2) 
+	
+	returns set = {0,7} 
