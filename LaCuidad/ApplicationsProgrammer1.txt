@@ -1,0 +1,105 @@
+Oracle APEX
+	Known as application express 
+	
+	Advantages:
+		-Fast development (RAD - Rapid application Development) 
+		-DBA similar to MYSQL
+		-Scalable
+		-Strong support
+		-Creates mockups easily 
+	
+	Disadvantages:
+		-vendor lock, only able to use Oracle's tools 
+		-limited web hosts
+		-no built version control 
+
+	* Around since 2004, originally named HTML DB --> changed to APEX in 2006
+	* Released V 5.1.4 in December 2017
+	
+BI
+	Known as Oracle Business Intelligence
+	Meant to standardize analytics into one platform
+	Easy access to data from wherever
+	Pre-built functions 
+	Visual workflow 
+	Series of applications included:
+		Analytics for 
+			Marketing 
+			HR
+			Sales
+			Service
+
+BIP
+	Known as Business intelligence Publisher 
+	Embedded with Oracles Business Intelligence Enterprise edition 
+	Creates interactive management reports 
+	Reduce administration costs
+	Exports documents in various extensions
+	Includes Template design 
+	
+	BIP Server is a JavaEE application 
+
+.Net
+	Microsoft Framework
+	**Now supported on Linux and MacOS
+	Used for Building Applications for Desktop/Web/Mobile
+	
+	Customers: 
+		Stack Overflow 
+		Alaska Airlines
+		UPS
+		Go Daddy
+	
+	Released in 2002
+	Follows CLI (common language infrastructure), needs to be executed in CLR (common language runtime) as opposed to machine code.
+	
+	**Visual Studio 
+		Written in C++ and C#
+
+		
+Java
+	Originally created by SUN Microsystems ( now owned by Oracle) in 1995
+	Object Oriented 
+	Write once, run everywhere principle (WORA)
+	Current Version : Java SE 9
+	Seen as slower and requiring more memory. Has sped up since introduction of Just in time Compilers 
+	Uses automatic garbage collection 
+	Does not support pointer style like C 
+	Runs on Java virtual machine 
+
+J2EE
+	Known as Java 2 Enterprise Edition
+	Used for the production of large scale multi-tier applications 
+	Java EE : collections of APIs owned by Oracle
+	J2EE brings simplicity, portability, scalability, and legacy integration. 
+
+ADF
+	Known as Oracle Application Development Framework 
+	Java EE [end to end] MVC Framework 
+	Provides easy and visual tools to gather data from databases
+	Drag and drop design layout to connect visual data.
+
+PowerShell
+	Open Source
+	Designed to improve command line by adding features and fixing old ones
+	PowerShell is based on objects not text
+	easy transition to scripting 
+	First appeared in 2006, current stable realse is 6.0 (01/2018) 
+	Now Supported for MacOS and Linux 
+
+ESRI ArcGIS
+	Graphical Information System 
+	Used for working with maps and geographical information 
+	Written in C++ 
+	Released in 1999, current stable version : 10.5.1 (07/2017) 
+	Includes developer tools for their APIs
+	
+//--------------------------------------------------------------------------------------------------------------------
+GENERAL NOTES 
+
+
+DIFFERENCE BETWEEN HASH TABLE AND HASH MAP 
+	Hash Table is synchronized, Hash Map is not. Hashmap is better for non threaded applications 
+	Hash Table does not allow null values/keys; Hash Maps allow for 1 null key and null values 
+	
+Java Hash Map null key will always have index 0	
