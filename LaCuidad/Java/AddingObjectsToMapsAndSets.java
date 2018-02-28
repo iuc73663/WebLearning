@@ -31,6 +31,7 @@ class AddingObjectsToMapsAndSets {
       
       
       // NOTE, duplicates will exist in sets/maps because they will not check the contents of objects even if they are the same 
+      //Need to implement hashcode and equals methods to check for duplicates 
       for(Person key : map.keySet()) {
          System.out.println("Key : " + key + " : " + map.get(key));
       }
