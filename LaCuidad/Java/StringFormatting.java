@@ -15,6 +15,15 @@ class StringFormatting {
       sb.append("my");
       sb.append("name");
       
-      System.out.println(sb.toString());
+      //System.out.println(sb.toString());
+      
+      
+      //alternative way to append : 
+      StringBuilder sb2 = new StringBuilder();
+      sb2.append("This ")
+         .append("Should ")
+         .append("Work");
+         
+      System.out.println(sb2.toString());   
    }
 }
